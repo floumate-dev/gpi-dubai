@@ -41,6 +41,10 @@
     img { display: block; max-width: 100%; }
     a { color: inherit; }
 
+    /* bez osamljenih riječi u zadnjem redu */
+    h1, h2, .sub, .badge { text-wrap: balance; }
+    p, li { text-wrap: pretty; }
+
     /* ---------- CTA ---------- */
     .cta {
       display: inline-flex;
@@ -350,7 +354,7 @@
 <body>
 
   <div class="bar">
-    <span>100% besplatan webinar uz Ornelu Šare · <span data-w="datum">-</span> u <span data-w="vrijeme">-</span></span>
+    <span>100% besplatan webinar uz Ornelu&nbsp;Šare · <span data-w="datum">-</span> u <span data-w="vrijeme">-</span></span>
     <button class="cta cta-sm" data-open>Rezerviraj svoje mjesto</button>
   </div>
 

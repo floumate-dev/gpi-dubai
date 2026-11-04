@@ -35,6 +35,10 @@
     img { display: block; max-width: 100%; }
     a { color: inherit; }
 
+    /* bez osamljenih riječi u zadnjem redu */
+    h1, h2, .sub, .badge { text-wrap: balance; }
+    p, li { text-wrap: pretty; }
+
     /* ---------- Hero ---------- */
     .hero {
       position: relative;
@@ -198,7 +202,7 @@
       Prijava je uspješna
     </span>
     <h1>Tvoje mjesto je <span class="hl">rezervirano!</span></h1>
-    <p class="sub">Napravi još ova dva koraka kako ne bi propustio/la webinar s Ornelom Šare.</p>
+    <p class="sub">Napravi još ova dva koraka kako ne bi propustio/la webinar s Ornelom&nbsp;Šare.</p>
 
     <div class="countdown" aria-label="Vrijeme do početka webinara">
       <span class="live" aria-hidden="true"></span>
