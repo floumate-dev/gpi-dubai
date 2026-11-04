@@ -154,6 +154,26 @@
     .step p + p { margin-top: 10px; }
     .step strong { color: var(--cream); font-weight: 600; }
     .note { font-size: 0.85rem !important; color: var(--cream-faint); }
+    .mail-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      margin: 18px 0 12px;
+      padding: 15px 20px;
+      background: var(--cta);
+      color: #fff;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(194, 86, 43, 0.3);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .mail-cta:hover { background: var(--cta-hover); transform: translateY(-1px); }
+    .mail-cta:focus-visible { outline: 3px solid var(--cream); outline-offset: 3px; }
+    .mail-cta svg { width: 22px; height: 22px; flex-shrink: 0; }
 
     .cal-btns { display: grid; gap: 10px; margin-top: 18px; }
     .cal-btn {
@@ -219,8 +239,13 @@
           <span class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></span>
           <div><small>Korak 1</small><h2>Odgovori na naš email</h2></div>
         </div>
-        <p>Na tvoju email adresu upravo je stigao email s potvrdom prijave. <strong>Odgovori na njega</strong>, dovoljno je napisati samo "DA".</p>
+        <p>Na tvoju email adresu upravo je stigao email s potvrdom prijave od <strong>info@gpi.hr</strong>. <strong>Odgovori na njega</strong>, dovoljno je napisati samo "DA".</p>
         <p>Tako će link za webinar i podsjetnici sigurno stići u tvoju pristiglu poštu, a ne u neželjenu poštu.</p>
+        <!-- Otvara Gmail s pretragom poruka od info@gpi.hr u svim mapama (i Promocije i Neželjena pošta) -->
+        <a class="mail-cta" href="https://mail.google.com/mail/u/0/#search/from%3Ainfo%40gpi.hr+in%3Aanywhere" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5z" opacity=".22"/><path fill="#fff" d="M3 7.2l9 6.3 9-6.3V6.5A1.5 1.5 0 0 0 19.5 5h-.6L12 9.8 5.1 5h-.6A1.5 1.5 0 0 0 3 6.5z"/><path fill="#fff" d="M3 7.2V17.5A1.5 1.5 0 0 0 4.5 19H6V9.3zM21 7.2V17.5a1.5 1.5 0 0 1-1.5 1.5H18V9.3z"/></svg>
+          Otvori Gmail
+        </a>
         <p class="note">Ne vidiš email? Provjeri mape Promocije i Neželjena pošta.</p>
       </section>
 
