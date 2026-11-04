@@ -325,21 +325,6 @@
     .consent a, .legal a { color: var(--cream-dim); }
     .sheet .cta { width: 100%; min-width: 0; }
     .legal { margin-top: 12px; text-align: center; font-size: 0.74rem; color: var(--cream-faint); }
-    .success { display: none; text-align: center; padding: 20px 0 12px; }
-    .success .tick {
-      width: 60px; height: 60px;
-      margin: 0 auto 14px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: rgba(111,211,156,0.12);
-      color: var(--ok);
-      font-size: 1.7rem;
-      font-weight: 800;
-    }
-    .success h2 { margin: 0; }
-    .sheet.done form, .sheet.done > h2 { display: none; }
-    .sheet.done .success { display: block; }
 
     @media (prefers-reduced-motion: reduce) {
       .cta, .modal, .sheet { transition: none; }
@@ -438,11 +423,6 @@
           <a href="https://docs.google.com/document/d/1AlamoG_7Le3AbaA98jB4a4TUhiJogAqf/edit?tab=t.0#heading=h.8gnmaxt5xw9u" target="_blank" rel="noopener">Uvjeti korištenja</a>
         </p>
       </form>
-
-      <div class="success" role="status">
-        <div class="tick">✓</div>
-        <h2>Prijavljeno</h2>
-      </div>
     </div>
   </div>
 
@@ -479,7 +459,6 @@
 
     // Modal
     const modal = document.getElementById('modal');
-    const sheet = document.getElementById('sheet');
     const form = document.getElementById('optin-form');
     let lastFocus = null;
     function openModal(e) {
@@ -487,7 +466,7 @@
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('locked');
-      setTimeout(() => { if (!sheet.classList.contains('done')) form.full_name.focus(); }, 280);
+      setTimeout(() => form.full_name.focus(), 280);
     }
     function closeModal() {
       modal.classList.remove('open');
@@ -591,9 +570,8 @@
       if (bad.length) { form[bad[0]].focus(); return; }
       if (!consentOk) { consent.focus(); return; }
       if (LP) phone.value = LP.parsePhoneNumber(phone.value).formatInternational();
-      sheet.classList.add('done');
-      // Nakon prijave vodi na stranicu zahvale (u GHL-u se ovo podešava kao preusmjeravanje forme)
-      setTimeout(() => { window.location.href = 'hvala.html'; }, 700);
+      // Nakon prijave odmah vodi na stranicu zahvale (u GHL-u se ovo podešava kao preusmjeravanje forme)
+      window.location.href = 'hvala.html';
     });
   </script>
 </body>
